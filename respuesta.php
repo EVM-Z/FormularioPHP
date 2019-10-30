@@ -12,9 +12,10 @@
     <div class="contenedor">
       <h1>Aprendiendo PHP</h1>
 
-      <pre>
-      <?php var_dump($_GET['nombre']); ?>
-      </pre>
+      <?php $resultado=$_POST; ?>
+      
+      <p>Nombre: <?php echo $resultado['nombre']; ?></p>
+      <p>Apellido: <?php echo $resultado['apellido']; ?></p>
       
     </div>
   </body>
