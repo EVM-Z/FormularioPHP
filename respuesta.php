@@ -35,7 +35,7 @@
         }
       ?>
 
-        <hr>
+      <hr>
 
       <?php
         // Validar checkbox
@@ -45,9 +45,22 @@
             echo "Se ha suscrito correctamente";
           }
         }
-        
       ?>
-      
+
+      <?php
+        // Validar array de checkobx
+        if(isset($_POST['curso'])){
+          $cursos=$_POST['curso'];
+          echo "Tus cursos son <br>";
+          foreach($cursos as $curso){
+            echo $curso . '<br>';
+          }
+        }
+        else{
+          echo "No elegiste curso";
+        }
+      ?>
+
     </div>
   </body>
 </html>
