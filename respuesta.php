@@ -34,8 +34,7 @@
           echo "El apellido es obligatorio";
         }
       ?>
-
-      <hr>
+      
 
       <?php
         // Validar checkbox
@@ -46,6 +45,8 @@
           }
         }
       ?>
+
+      <hr>
 
       <?php
         // Validar array de checkobx
@@ -60,6 +61,32 @@
           echo "No elegiste curso";
         }
       ?>
+
+      <hr>
+
+
+      <?php
+        // Validar Select
+        if(isset($_POST['area'])){
+          $area=$_POST['area'];
+          echo "<h2>Área de Especialización</h2>";
+          switch ($area){
+            case 'fe':
+              echo "FrontEnd";
+              break;
+            case 'be':
+              echo "BackEnd";
+              break;
+            case 'fs':
+              echo "FullStack";
+              break;
+            default:
+              echo "Por favor elige un área";
+          }
+        }
+      ?>
+
+      <hr>
 
     </div>
   </body>
