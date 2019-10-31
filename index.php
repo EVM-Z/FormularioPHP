@@ -14,7 +14,7 @@
 
         <div class="contenido">
 
-          <form class="" action="respuesta.php" method="get">
+          <form class="" action="respuesta.php" method="post">
 
             <div class="informacion">
 

@@ -12,14 +12,27 @@
     <div class="contenedor">
       <h1>Aprendiendo PHP</h1>
 
-      <?php $resultado=$_GET; ?>
-      
-      <!-- <pre>
-        <?php var_dump($resultado); ?>
-      </pre> -->
+      <?php $resultado=$_POST; ?>
+      <?php $nombre=$resultado['nombre']; ?>
+      <?php $apellido=$resultado['apellido']; ?>
 
-      <p>Nombre: <?php echo $resultado['nombre']; ?></p>
-      <p>Apellido: <?php echo $resultado['apellido']; ?></p>
+      <?php
+        if(! (filter_has_var(INPUT_POST, 'nombre') && (strlen(filter_input(INPUT_POST, 'nombre')) > 0))){
+          echo "El nombre es obligatorio";
+        }
+        else{ ?>
+          <p>Nombre: <?php echo $nombre; ?></p>
+        <?php } ?>
+
+
+      <?php
+        if(!isset($apellido) || trim($apellido) !=''){ ?>
+          <p>Apellido: <?php echo $apellido ?></p>
+        <?php }
+        else{
+          echo "El apellido es obligatorio";
+        }
+        ?>
       
     </div>
   </body>
