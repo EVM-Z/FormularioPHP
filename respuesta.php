@@ -118,8 +118,9 @@
       <?php
         if(isset($_POST['mensaje'])){
           $mensaje=$_POST['mensaje'];
-          if(strlen($mensaje) > 0 && trim($mensaje)){
-            echo $mensaje;
+          $Nuevo_mensaje=filter_var($mensaje, FILTER_SANITIZE_STRING);
+          if(strlen($Nuevo_mensaje) > 0 && trim($Nuevo_mensaje)){
+            echo $Nuevo_mensaje;
           }
           else{
             echo "El mensaje esta vacio";
