@@ -86,6 +86,34 @@
         }
       ?>
 
+      <?php
+        // Validar radio button
+        $opciones=array(
+          'pres'=>'Presencial',
+          'online'=>'En Linea'
+        );
+      ?>
+
+      <h2>Tipo de Curso Elegido</h2>
+      <?php
+        if(isset($_POST['opciones'], $opciones)){
+          $tipo_curso=$_POST['opciones'];
+          switch ($tipo_curso){
+            case 'pres':
+              echo "Elegiste Presencial";
+              break;
+            case 'online':
+              echo "Elegiste en Linea";
+              break;
+            
+          }
+        }
+        else{
+          echo "No elegiste un tipo de curso";
+        }
+      ?>
+
+
       <hr>
 
     </div>
