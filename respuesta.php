@@ -105,11 +105,25 @@
             case 'online':
               echo "Elegiste en Linea";
               break;
-            
           }
         }
         else{
           echo "No elegiste un tipo de curso";
+        }
+      ?>
+
+      <hr>
+
+      <h2>Mensaje</h2>
+      <?php
+        if(isset($_POST['mensaje'])){
+          $mensaje=$_POST['mensaje'];
+          if(strlen($mensaje) > 0 && trim($mensaje)){
+            echo $mensaje;
+          }
+          else{
+            echo "El mensaje esta vacio";
+          }
         }
       ?>
 
